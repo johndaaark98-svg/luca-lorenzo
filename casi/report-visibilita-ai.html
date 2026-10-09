@@ -119,6 +119,13 @@ html.loading,html.loading body{overflow:hidden}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
   .rv.pre{transform:none}
 }
+.legalbar{display:flex;justify-content:space-between;align-items:center;gap:6px 30px;flex-wrap:wrap;margin-top:40px;padding-top:18px;border-top:1px solid var(--line-d);font-size:13px;line-height:1.6;color:rgba(255,255,255,.62)}
+.legalbar p{margin:0;max-width:78ch}
+.legalbar a{color:#fff}
+.legalbar p a{text-decoration:underline;text-underline-offset:3px}
+.legalbar nav{display:flex;gap:22px}
+.legalbar nav a{display:inline-block;padding:10px 0;min-width:44px}
+.legalbar nav a:hover{text-decoration:underline;text-underline-offset:4px}
 
 .nav{color:var(--ink)}
 .nav .brand{align-items:center}
@@ -256,10 +263,14 @@ html.loading,html.loading body{overflow:hidden}
       <div style="display:flex;gap:40px;flex-wrap:wrap">
         <div class="col"><span class="label">Versione</span><span>2026 © Edition</span></div>
         <div class="col"><span class="label">Ora locale</span><span id="clock" style="font-variant-numeric:tabular-nums">Treviso</span></div>
-        <div class="col"><span class="label">Società</span><span>L3 Innovation Srl · P.IVA 02882330901</span></div>
+        <div class="col"><span class="label">Società</span><span>L3 Innovation S.r.l. · P.IVA 02882330901</span></div>
       </div>
       <div class="col"><span class="label">Social</span><div class="soc"><a href="https://www.instagram.com/lucalorenzo.ai/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@luca.lorenzo.ai" target="_blank" rel="noopener">TikTok</a><a href="https://www.linkedin.com/in/luca-lorenzo-9a872317b/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/johndaaark/" target="_blank" rel="noopener">John Dark</a><a href="https://open.spotify.com/artist/3PGqqrDQCjslkHjclaObLd" target="_blank" rel="noopener">Spotify</a></div></div>
       <div class="col"><span class="label">Siti</span><div class="soc"><a href="https://oviaitalia.it" target="_blank" rel="noopener">Ovia</a><a href="https://l3innovation.it" target="_blank" rel="noopener">L3 Innovation</a><a href="https://www.rialziamoci.it" target="_blank" rel="noopener">Rialziamoci Italia</a></div></div>
+    </div>
+    <div class="legalbar">
+      <p>L3 Innovation S.r.l. · Via Bonn 22, 07026 Olbia (SS) · C.F. e P.IVA 02882330901 · REA SS-225439 · Cap. soc. € 10.000,00 sottoscritto, € 2.500,00 versato · PEC <a href="mailto:l3innovation@pec.it">l3innovation@pec.it</a></p>
+      <nav aria-label="Note legali"><a href="../privacy.html">Privacy</a><a href="../cookie.html">Cookie</a><a href="../termini.html">Termini</a></nav>
     </div>
   </div>
 </footer>
@@ -303,7 +314,7 @@ if(track&&playBtn){ let on=false; const fmt=t=>`${Math.floor(t/60)}:${String(Mat
 <script>
 (()=>{
 const h=document.documentElement, lbl=document.getElementById('ptLbl');
-const LABELS={"index.html": "Home", "casi/index.html": "Archivio", "casi/ovia.html": "Ovia", "casi/l3-innovation.html": "L3 Innovation", "casi/report-visibilita-ai.html": "Report Visibilità AI", "casi/rialziamoci-italia.html": "Rialziamoci Italia", "casi/eurofiltri.html": "Eurofiltri Group", "casi/encore.html": "Encore", "casi/john-dark.html": "John Dark", "casi/attivita-locali.html": "Attività locali"};
+const LABELS={"index.html": "Home", "casi/index.html": "Archivio", "privacy.html": "Privacy", "cookie.html": "Cookie", "termini.html": "Termini", "casi/ovia.html": "Ovia", "casi/l3-innovation.html": "L3 Innovation", "casi/report-visibilita-ai.html": "Report Visibilità AI", "casi/rialziamoci-italia.html": "Rialziamoci Italia", "casi/eurofiltri.html": "Eurofiltri Group", "casi/encore.html": "Encore", "casi/john-dark.html": "John Dark", "casi/attivita-locali.html": "Attività locali"};
 const ROOT=new URL(document.querySelector('meta[name=pt-root]').content,location.href);
 function reveal(delay){ setTimeout(()=>{ h.classList.add('pt-out'); h.classList.remove('loading'); if(location.hash){ const t=document.querySelector(location.hash); if(t) requestAnimationFrame(()=>t.scrollIntoView()); } setTimeout(()=>h.classList.remove('pt-cover','pt-out','pt-intro'),1050); },delay); }
 if(h.classList.contains('pt-intro')){
