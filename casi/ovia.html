@@ -213,6 +213,40 @@ html.loading,html.loading body{overflow:hidden}
 .feat .note{margin:clamp(32px,4vw,48px) 0 0;font-size:13px;color:rgba(255,255,255,.58)}
 @media (max-width:980px){.fareas{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:620px){.fstats{grid-template-columns:repeat(2,minmax(0,1fr))}.fareas{grid-template-columns:1fr}}
+.flow{max-width:1180px;margin:clamp(60px,8vw,110px) auto 0;padding:0 var(--gut)}
+.flow .in{background:#0B1020;color:#fff;border-radius:6px;padding:clamp(28px,5.5vw,76px);overflow:hidden;position:relative}
+.flow .in::before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(closest-side,rgba(45,107,255,.28),transparent);pointer-events:none}
+.flow .label{color:rgba(255,255,255,.62);display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.flow .label::before{content:"";width:8px;height:8px;border-radius:50%;background:#2D6BFF;box-shadow:0 0 10px #2D6BFF}
+.flow h2{font-size:clamp(30px,4.2vw,58px);font-weight:400;letter-spacing:-.035em;line-height:1.04;margin:0;max-width:16ch;text-wrap:balance;position:relative}
+.flow h2 span{color:#8C93A8}
+.fsteps{list-style:none;margin:clamp(44px,6vw,80px) 0 0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));position:relative}
+.fsteps::before,.fsteps::after{content:"";position:absolute;left:0;right:0;top:7px;height:1px;background:rgba(255,255,255,.16)}
+.fsteps::after{background:#2D6BFF;transform-origin:left;transition:transform 1.8s var(--ease-out) .35s}
+.flow.pre .fsteps::after{transform:scaleX(0)}
+.fsteps li{position:relative;padding:34px 16px 0 0}
+.fsteps i{position:absolute;left:0;top:0;width:15px;height:15px;border-radius:50%;background:#2D6BFF;border:1px solid #2D6BFF;transition:background .4s,border-color .4s;transition-delay:calc(.35s + var(--i)*.28s)}
+.flow.pre .fsteps i{background:#0B1020;border-color:rgba(255,255,255,.35)}
+.fsteps li.key i{box-shadow:0 0 0 6px rgba(45,107,255,.18),0 0 20px rgba(45,107,255,.85)}
+.fsteps small{display:block;font-size:12px;letter-spacing:.06em;color:rgba(255,255,255,.55);font-variant-numeric:tabular-nums;margin-bottom:8px}
+.fsteps b{display:block;font-size:17px;font-weight:500;letter-spacing:-.01em;margin-bottom:6px}
+.fsteps span{display:block;font-size:14px;line-height:1.45;color:rgba(255,255,255,.66)}
+.fsteps li.key b{color:#8FB0FF}
+.fproof{display:flex;flex-wrap:wrap;gap:12px 34px;margin-top:clamp(40px,5vw,60px);padding-top:22px;border-top:1px solid rgba(255,255,255,.12)}
+.fproof div{display:flex;align-items:baseline;gap:10px;font-size:14px;color:rgba(255,255,255,.66)}
+.fproof b{font-size:clamp(26px,2.6vw,36px);font-weight:400;letter-spacing:-.03em;color:#fff;font-variant-numeric:tabular-nums}
+.flow .lede{font-size:clamp(16px,1.25vw,18px);line-height:1.62;color:rgba(255,255,255,.8);max-width:62ch;margin:clamp(28px,3vw,40px) 0 0}
+.flow .more{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:15px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.35)}
+.flow .more:hover{border-color:#fff}
+@media (max-width:860px){
+  .fsteps{grid-template-columns:1fr}
+  .fsteps::before,.fsteps::after{left:7px;right:auto;top:8px;bottom:8px;width:1px;height:auto}
+  .fsteps::after{transform-origin:top}
+  .flow.pre .fsteps::after{transform:scaleY(0)}
+  .fsteps li{padding:0 0 26px 38px}
+  .fsteps i{top:2px}
+}
+@media (prefers-reduced-motion:reduce){.fsteps::after,.fsteps i{transition:none}}
 </style>
 <script>(function(){var h=document.documentElement;h.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;try{var go=sessionStorage.getItem('ptLabel');if(go!==null){h.classList.add('pt-cover','loading');h.dataset.ptLabel=go;sessionStorage.removeItem('ptLabel');return;}if(h.dataset.home==='1'&&!sessionStorage.getItem('seenIntro')){h.classList.add('pt-cover','pt-intro','loading');sessionStorage.setItem('seenIntro','1');}}catch(e){}})();</script>
 </head>
@@ -255,7 +289,7 @@ html.loading,html.loading body{overflow:hidden}
   <section class="cover"><div class="frame"><video class="clip " data-auto muted loop playsinline preload="none" data-poster="../assets/ovia-reel.webp"><source data-src="../assets/ovia-reel.mp4" type="video/mp4"><source data-src="../assets/ovia-reel.webm" type="video/webm"></video></div></section>
   <section class="nums"><div class="num rv"><b>7</b><span>moduli di prodotto</span></div><div class="num rv"><b>700</b><span>clienti dello studio tipo per cui è progettato</span></div><div class="num rv"><b>24</b><span>pagine di brief tecnico</span></div></section>
   <section class="body"><div class="sec rv"><h2>Il contesto</h2><div class="txt"><p>Uno studio di 21 persone con circa 700 clienti perde ore ogni giorno in solleciti, documenti e telefonate che nessuno trascrive. Uno studio più piccolo, 50 clienti, annota ancora le cose da fare su un foglio di carta.</p><p>Il problema non è l&#x27;intelligenza artificiale. È il processo. Ovia nasce per questo: prima si disegna come lavora lo studio, poi si mette l&#x27;AI dove restituisce tempo.</p></div></div><div class="sec rv"><h2>Cosa ho fatto</h2><div class="txt"><ul><li>Posizionamento: niente «gestionale». Un hub operativo intelligente, con strategia e sicurezza come fattori distintivi e una sola chiamata all&#x27;azione su ogni pagina: «Prenota il Process Check».</li><li>Prodotto in sette moduli: Second Brain, Inbox, Lead Generation, Chiamate, Documenti, Siti Web per le AI, CRM.</li><li>Pipeline delle chiamate: registratore Plaud → Zapier → webhook → categorizzazione con un modello linguistico → aggiornamento della scheda cliente. Il differenziatore non è il riassunto, che fanno tutti: è l&#x27;abbinamento automatico chiamata→cliente, lo storico nel tempo e il tracciamento degli impegni aperti su centinaia di clienti.</li><li>Sito oviaitalia.it: un solo file HTML, maggiordomo AI (Claude) su funzioni serverless Vercel, prenotazione con Cal.com, hosting su GitHub Pages. Due landing dedicate ai siti web «fatti per le AI», per studi e per attività locali.</li><li>Demo costruite su Base44 per gli incontri con i prospect: Ovia Documenti (solleciti), Ovia Chiamate (Plaud→CRM), Ovia Modelli (documenti ricorrenti).</li><li>Stack passato da Lovable + Supabase a Base44 a un MVP su misura. Il codice è stato acquisito integralmente (cessione dei diritti) e consegnato a un nuovo sviluppatore con un brief tecnico di 24 pagine e una presentazione commerciale di 8.</li></ul></div></div><div class="sec rv"><h2>Dove siamo</h2><div class="txt"><ul><li>Pilot e demo in corso con studi del trevigiano. Modello commerciale: attivazione una tantum più canone mensile, con ore di supporto umano incluse.</li><li>In parallelo, un team di agenti AI orchestrato con Paperclip lavora su marketing, prodotto e direzione, con una dashboard «chi fa cosa» per seguirli senza disperdersi.</li><li>Ottobre 2026: Ovia sullo schermo degli uffici Siemens Energy di Erlangen, per un confronto su una possibile collaborazione. Niente di firmato, ma il prodotto ha retto la stanza.</li></ul></div></div></section>
-  
+  <section class="flow rv" aria-labelledby="flow-h"><div class="in"><span class="label">Ovia in produzione · il primo motore</span><h2 id="flow-h">Una telefonata entra. Una pratica pronta esce. <span>È già successo più di 430 volte.</span></h2><ol class="fsteps"><li style="--i:0"><i aria-hidden="true"></i><small>01</small><b>Chiamata</b><span>registrata dal numero verde</span></li><li style="--i:1"><i aria-hidden="true"></i><small>02</small><b>Ascolto</b><span>trascrizione automatica</span></li><li style="--i:2"><i aria-hidden="true"></i><small>03</small><b>Estrazione</b><span>creditori, redditi, patrimonio, urgenze</span></li><li style="--i:3"><i aria-hidden="true"></i><small>04</small><b>Proposta</b><span>fattibilità e sede competente</span></li><li style="--i:4" class="key"><i aria-hidden="true"></i><small>05</small><b>Approvazione</b><span>decide sempre una persona</span></li><li style="--i:5"><i aria-hidden="true"></i><small>06</small><b>Documenti</b><span>5 atti ufficiali in PDF e Word</span></li></ol><div class="fproof"><div><b>430+</b>pratiche</div><div><b>12</b>flussi automatici</div><div><b>7</b>email per appuntamento</div><div><b>13</b>sedi servite</div></div><p class="lede">Il primo motore di Ovia l&#x27;ho costruito per Rialziamoci Italia, ente nazionale sul sovraindebitamento: si chiama RI PREF e lavora ogni giorno. È la stessa architettura che Ovia porta negli studi professionali: le chiamate diventano dati, i dati diventano documenti, e la firma resta umana.</p><a class="more" href="rialziamoci-italia.html">Il caso RI PREF completo <span aria-hidden="true">→</span></a></div></section>
   <section class="body"><div class="sec rv"><h2>Strumenti</h2><div class="tools"><span>Claude</span><span>Base44</span><span>Vercel</span><span>Cal.com</span><span>Plaud</span><span>Zapier</span><span>n8n</span><span>GitHub Pages</span><span>Paperclip</span></div></div></section>
   <section class="gal "><figure class="rv"><div class="frame tall"><img decoding="async" src="../assets/siemens-ovia.webp" alt="Ovia sullo schermo di Siemens Energy a Erlangen, ottobre 2026: un confronto su una possibile collaborazione" loading="lazy"></div><figcaption>Ovia sullo schermo di Siemens Energy a Erlangen, ottobre 2026: un confronto su una possibile collaborazione</figcaption></figure><figure class="rv"><div class="frame tall"><img decoding="async" src="../assets/siemens-lounge.webp" alt="Siemens Energy, Erlangen" loading="lazy"></div><figcaption>Siemens Energy, Erlangen</figcaption></figure></section>
   <section class="next">
