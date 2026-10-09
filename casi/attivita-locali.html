@@ -194,6 +194,25 @@ html.loading,html.loading body{overflow:hidden}
   .arows a,.arows .static{grid-template-columns:1fr;gap:8px}
   .arows .yr{text-align:left}
 }
+.feat{max-width:1180px;margin:clamp(60px,8vw,110px) auto 0;padding:0 var(--gut)}
+.feat .in{background:var(--ink-2);color:#fff;border-radius:6px;padding:clamp(28px,5.5vw,76px)}
+.feat .label{color:rgba(255,255,255,.62);display:block;margin-bottom:22px}
+.feat h2{font-size:clamp(30px,4.2vw,58px);font-weight:400;letter-spacing:-.035em;line-height:1.04;margin:0 0 26px;max-width:17ch;text-wrap:balance}
+.feat h2 span{color:#9A9C9F}
+.feat .lede{font-size:clamp(16px,1.25vw,18px);line-height:1.62;color:rgba(255,255,255,.8);max-width:62ch;margin:0}
+.fstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(16px,2.5vw,36px);margin-top:clamp(40px,5vw,64px)}
+.fstats div{border-top:1px solid var(--line-d);padding:18px 0 26px}
+.fstats b{display:block;font-size:clamp(34px,3.8vw,54px);font-weight:400;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.fstats span{display:block;margin-top:8px;font-size:14px;line-height:1.45;color:rgba(255,255,255,.66);max-width:24ch}
+.fareas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2.5vw,36px);margin-top:clamp(24px,3vw,40px)}
+.fareas div{border-top:1px solid var(--line-d);padding-top:18px}
+.fareas h3{font-size:15px;font-weight:500;margin:0 0 14px;letter-spacing:-.005em}
+.fareas ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.fareas li{font-size:14.5px;line-height:1.5;color:rgba(255,255,255,.72);padding-left:18px;position:relative}
+.fareas li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:#5BD15F}
+.feat .note{margin:clamp(32px,4vw,48px) 0 0;font-size:13px;color:rgba(255,255,255,.58)}
+@media (max-width:980px){.fareas{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.fstats{grid-template-columns:repeat(2,minmax(0,1fr))}.fareas{grid-template-columns:1fr}}
 </style>
 <script>(function(){var h=document.documentElement;h.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;try{var go=sessionStorage.getItem('ptLabel');if(go!==null){h.classList.add('pt-cover','loading');h.dataset.ptLabel=go;sessionStorage.removeItem('ptLabel');return;}if(h.dataset.home==='1'&&!sessionStorage.getItem('seenIntro')){h.classList.add('pt-cover','pt-intro','loading');sessionStorage.setItem('seenIntro','1');}}catch(e){}})();</script>
 </head>
@@ -235,7 +254,9 @@ html.loading,html.loading body{overflow:hidden}
   </section>
   <section class="cover"><div class="frame"><img decoding="async" src="../assets/site-scrigno.webp" alt="Sito della pasticceria Lo Scrigno Magico: «Il buongiorno più dolce»"></div></section>
   <section class="nums"><div class="num rv"><b>4,7★</b><span>Lo Scrigno Magico su Google, 263 recensioni</span></div><div class="num rv"><b>1</b><span>clic per cambiare lingua</span></div><div class="num rv"><b>0</b><span>pagine inutili</span></div></section>
-  <section class="body"><div class="sec rv"><h2>Lo Scrigno Magico</h2><div class="txt"><p>Pasticceria artigianale: palette calda (crema, cacao, lampone), la colazione e il cappuccino come apertura, e una prenotazione torte in più passaggi che genera un messaggio WhatsApp già compilato. Niente form da far gestire a chi sta dietro il bancone.</p></div></div><div class="sec rv"><h2>Dott.ssa Lucrezia Trabucco</h2><div class="txt"><p>Biologa nutrizionista a Treviso, e tecnico di ginnastica artistica: la ginnastica è diventata il filo conduttore del sito, con un suo video alla trave al posto dello scroll-video del template. Prenotazione su MioDottore. Il sito attuale firma la realizzazione a L3 Innovation.</p></div></div><div class="sec rv"><h2>Qui Treviso e Maiko</h2><div class="txt"><p>Per la rivista mensile Qui Treviso, proposta e prototipo navigabile di un nuovo sito con pubblicazione automatica degli articoli: oggi un&#x27;azienda sceglie una rivista anche per il link che riceve online. Per Maiko, brand di borse all&#x27;uncinetto, identità completa (Il Primo Nodo come firma), brand book di 14 pagine e un&#x27;app di cassa e ordini.</p></div></div><div class="sec rv"><h2>Strumenti</h2><div class="tools"><span>HTML/CSS/JS</span><span>Base44</span><span>Higgsfield</span><span>WhatsApp</span><span>MioDottore</span><span>React</span></div></div></section>
+  <section class="body"><div class="sec rv"><h2>Lo Scrigno Magico</h2><div class="txt"><p>Pasticceria artigianale: palette calda (crema, cacao, lampone), la colazione e il cappuccino come apertura, e una prenotazione torte in più passaggi che genera un messaggio WhatsApp già compilato. Niente form da far gestire a chi sta dietro il bancone.</p></div></div><div class="sec rv"><h2>Dott.ssa Lucrezia Trabucco</h2><div class="txt"><p>Biologa nutrizionista a Treviso, e tecnico di ginnastica artistica: la ginnastica è diventata il filo conduttore del sito, con un suo video alla trave al posto dello scroll-video del template. Prenotazione su MioDottore. Il sito attuale firma la realizzazione a L3 Innovation.</p></div></div><div class="sec rv"><h2>Qui Treviso e Maiko</h2><div class="txt"><p>Per la rivista mensile Qui Treviso, proposta e prototipo navigabile di un nuovo sito con pubblicazione automatica degli articoli: oggi un&#x27;azienda sceglie una rivista anche per il link che riceve online. Per Maiko, brand di borse all&#x27;uncinetto, identità completa (Il Primo Nodo come firma), brand book di 14 pagine e un&#x27;app di cassa e ordini.</p></div></div></section>
+  
+  <section class="body"><div class="sec rv"><h2>Strumenti</h2><div class="tools"><span>HTML/CSS/JS</span><span>Base44</span><span>Higgsfield</span><span>WhatsApp</span><span>MioDottore</span><span>React</span></div></div></section>
   <section class="gal one"><figure class="rv"><div class="frame "><img decoding="async" src="../assets/site-trabucco.webp" alt="Dott.ssa Trabucco: «Nutrizione consapevole per il tuo equilibrio»" loading="lazy"></div><figcaption>Dott.ssa Trabucco: «Nutrizione consapevole per il tuo equilibrio»</figcaption></figure></section>
   <section class="next">
     <span class="label">Prossimo caso</span>
