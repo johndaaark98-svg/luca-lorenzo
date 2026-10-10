@@ -373,7 +373,7 @@ if(track&&playBtn){ let on=false; const fmt=t=>`${Math.floor(t/60)}:${String(Mat
 <script>
 (()=>{
 const h=document.documentElement, lbl=document.getElementById('ptLbl');
-const LABELS={"index.html": "Home", "casi/index.html": "Archivio", "privacy.html": "Privacy", "cookie.html": "Cookie", "termini.html": "Termini", "casi/ovia.html": "Ovia", "casi/l3-innovation.html": "L3 Innovation", "casi/report-visibilita-ai.html": "Report Visibilità AI", "casi/rialziamoci-italia.html": "Rialziamoci Italia", "casi/eurofiltri.html": "Eurofiltri Group", "casi/encore.html": "Encore", "casi/john-dark.html": "John Dark", "casi/attivita-locali.html": "Attività locali"};
+const LABELS={"index.html": "Home", "casi/index.html": "Archivio", "privacy.html": "Privacy", "cookie.html": "Cookie", "termini.html": "Termini", "casi/ovia.html": "Ovia", "casi/l3-innovation.html": "L3 Innovation", "casi/report-visibilita-ai.html": "Report Visibilità AI", "casi/rialziamoci-italia.html": "Rialziamoci Italia", "casi/eurofiltri.html": "Eurofiltri Group", "casi/encore.html": "Encore", "casi/john-dark.html": "John Dark"};
 const ROOT=new URL(document.querySelector('meta[name=pt-root]').content,location.href);
 function reveal(delay){ setTimeout(()=>{ h.classList.add('pt-out'); h.classList.remove('loading'); if(location.hash){ const t=document.querySelector(location.hash); if(t) requestAnimationFrame(()=>t.scrollIntoView()); } setTimeout(()=>h.classList.remove('pt-cover','pt-out','pt-intro'),1050); },delay); }
 if(h.classList.contains('pt-intro')){
